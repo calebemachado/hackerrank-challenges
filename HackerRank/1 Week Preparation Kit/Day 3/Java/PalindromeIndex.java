@@ -26,7 +26,7 @@ class Result {
     }
 
     /**
-     * This should be the simple solution
+     * This is the only solution that pass in all scenarios, but in cases like "aaabab" it returns the wront answer
      */
     public static int palindromeIndexWhile(String s) {
         int left = 0;
