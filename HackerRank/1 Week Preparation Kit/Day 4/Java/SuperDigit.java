@@ -25,4 +25,25 @@ class Result {
         
         return isSuperDigit(superD.toString());    
     }
+
+    public static Integer isSuperDigit(String n) {
+        try {
+            if(n.length() == 1) {
+                return Integer.valueOf(n);
+            }
+            
+            List<String> intString = Arrays.asList(n.split(""));
+            Integer sum = 0;
+            
+            for(int i = 0; i < intString.size(); i++){
+                sum += Integer.valueOf(intString.get(i));
+            }
+            
+            return isSuperDigit(sum.toString());
+            
+        } catch(Exception e) {
+            return 0;
+        }
+        
+    }
 }
