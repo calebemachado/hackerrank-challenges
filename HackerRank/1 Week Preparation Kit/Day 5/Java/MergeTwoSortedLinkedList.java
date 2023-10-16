@@ -68,33 +68,19 @@ public class Solution {
         SinglyLinkedListNode p1 = head1;
         SinglyLinkedListNode p2 = head2;
         
-        while(true) {
-            System.out.println(String.format("P1 %s | P2 %s", p1, p2));
-            
-            if(p1 == null && p2 == null) break;
-
+        while(p1 != null || p2 != null) {
             if(p1 == null) {
                 merged.insertNode(p2.data);
                 p2 = p2.next;
-                continue;
-            }
-
-            if (p2 == null) {
+            } else if (p2 == null) {
                 merged.insertNode(p1.data);
                 p1 = p1.next;
-                continue;
-            }
-
-            if(p1.data <= p2.data) {
+            } else if(p1.data <= p2.data) {
                 merged.insertNode(p1.data);
                 p1 = p1.next;
-                continue;
-            }
-            
-            if(p1.data >= p2.data) {
+            } else {
                 merged.insertNode(p2.data);
                 p2 = p2.next;
-                continue;
             }
         }
         
