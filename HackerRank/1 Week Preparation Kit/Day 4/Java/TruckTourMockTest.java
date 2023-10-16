@@ -16,7 +16,10 @@ public static int truckTour(List<List<Integer>> petrolpumps) {
             amount = petrolpumps.get(j).get(0);
             distance = petrolpumps.get(j).get(1);
             difference += amount - distance;
-            if(difference <= 0) break;
+            if(difference <= 0) {
+                i = j;
+                break;
+            }
             j++;
         }
 
